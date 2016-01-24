@@ -1,13 +1,16 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.neenbedankt.android-apt'
 
 android {
-    compileSdkVersion 'Google Inc.:Google APIs:22'
-    buildToolsVersion "23.0.0 rc3"
+    def and = rootProject.ext.android;
+
+    compileSdkVersion and.compileSdkVersion
+    buildToolsVersion and.buildToolsVersion
 
     defaultConfig {
-        applicationId "htoyama.dagger2ex"
-        minSdkVersion 16
-        targetSdkVersion 22
+        applicationId "htoyama.simple_dagger2"
+        minSdkVersion and.minSdkVersion
+        targetSdkVersion and.targetSdkVersion
         versionCode 1
         versionName "1.0"
     }
@@ -20,7 +23,15 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:22.+'
+    def lib = rootProject.ext.library;
+
+    compile  lib.appcompatV7
+    compile  lib.jacksonCore
+
+    compile  lib.dagger
+    apt      lib.daggerCompiler
+    provided lib.javaxAnnotation
+
+    testCompile lib.junit
+    testCompile lib.mockito
 }
