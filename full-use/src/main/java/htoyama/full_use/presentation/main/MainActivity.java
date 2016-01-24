@@ -1,7 +1,9 @@
-package htoyama.full_use;
+package htoyama.full_use.presentation.main;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import htoyama.full_use.R;
 
 public class MainActivity extends AppCompatActivity {
 
