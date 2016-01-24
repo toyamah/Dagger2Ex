@@ -29,9 +29,9 @@ public class DataModule {
      * 自分で管理しているクラス、より具体的に言うと{@code @Inject}をコンストラクタで書けるクラスは
      * 基本的には、ここModule内には<b>書かない</b>。
      *
+     * <p>
      * ここに書くのは、{@link SharedPreferences}のようなAndroidのクラスであったり、
      * {@link Gson}のようなサードパーティーライブラリが多い。
-     *
      * 理由は、自分でInject付きのコンストラクタを自分で宣言できないから。
      */
     public Object How_to_use_module;
