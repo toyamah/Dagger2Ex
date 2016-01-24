@@ -26,6 +26,7 @@ dependencies {
     def lib = rootProject.ext.library;
 
     compile  lib.appcompatV7
+    compile 'com.google.code.gson:gson:2.5'
 
     compile  lib.dagger
     apt      lib.daggerCompiler
