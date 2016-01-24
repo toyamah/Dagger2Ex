@@ -12,8 +12,8 @@ public final class Item {
      */
     public Item(int id, String name, int price) {
         mId = id;
-        mName = name;
-        mPrice = price;
+        setName(name);
+        setPrice(price);
     }
 
     public int id() {
