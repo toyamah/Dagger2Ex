@@ -1,1 +1,1 @@
-include ':simple-non-dagger2', ':simple-dagger2', ':full-use'
+include ':simple-without-dagger2', ':simple-with-dagger2', ':full-use'
