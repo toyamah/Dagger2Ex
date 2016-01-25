@@ -13,6 +13,7 @@ android {
         targetSdkVersion and.targetSdkVersion
         versionCode 1
         versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
@@ -34,4 +35,13 @@ dependencies {
 
     testCompile lib.junit
     testCompile lib.mockito
+
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.1') {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    }
+
+    androidTestCompile lib.mockito
+    androidTestCompile "com.google.dexmaker:dexmaker:1.2"
+    androidTestCompile "com.google.dexmaker:dexmaker-mockito:1.2"
+    androidTestApt lib.daggerCompiler
 }
