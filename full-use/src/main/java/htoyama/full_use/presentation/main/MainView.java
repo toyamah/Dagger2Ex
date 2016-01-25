@@ -26,9 +26,9 @@ public class MainView extends LinearLayout {
 
     public MainView(Context context, AttributeSet attrs) {
         super(context, attrs);
-
         setOrientation(VERTICAL);
-        LayoutInflater.from(getContext()).inflate(R.layout.view_item, this, true);
+
+        LayoutInflater.from(context).inflate(R.layout.view_item, this, true);
         mNameEditText = (EditText) findViewById(R.id.item_name);
         mPriceEditText = (EditText) findViewById(R.id.item_price);
         mSubmitButton = (Button) findViewById(R.id.submit_button);
@@ -42,6 +42,7 @@ public class MainView extends LinearLayout {
 
     public void bind(@Nullable Item item) {
         if (item == null) {
+            //FIXME
             mItem = new Item(1, "", 0);
             return;
         }
