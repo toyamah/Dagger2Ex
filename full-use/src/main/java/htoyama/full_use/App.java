@@ -2,6 +2,7 @@ package htoyama.full_use;
 
 import android.app.Application;
 import android.content.Context;
+import android.support.annotation.VisibleForTesting;
 
 public class App extends Application {
     /**
@@ -28,6 +29,11 @@ public class App extends Application {
         mComponent = DaggerAppComponent.builder()
                 .appModule(new AppModule(this))
                 .build();
+    }
+
+    @VisibleForTesting
+    public void setComponent(AppComponent component) {
+        mComponent = component;
     }
 
 }
