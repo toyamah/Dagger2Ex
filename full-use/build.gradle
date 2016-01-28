@@ -1,0 +1,47 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.neenbedankt.android-apt'
+
+android {
+    def and = rootProject.ext.android;
+
+    compileSdkVersion and.compileSdkVersion
+    buildToolsVersion and.buildToolsVersion
+
+    defaultConfig {
+        applicationId "htoyama.simple_dagger2"
+        minSdkVersion and.minSdkVersion
+        targetSdkVersion and.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    def lib = rootProject.ext.library;
+
+    compile  lib.appcompatV7
+    compile 'com.google.code.gson:gson:2.5'
+
+    compile  lib.dagger
+    apt      lib.daggerCompiler
+    provided lib.javaxAnnotation
+
+    testCompile lib.junit
+    testCompile lib.mockito
+
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.1') {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    }
+
+    androidTestCompile lib.mockito
+    androidTestCompile "com.google.dexmaker:dexmaker:1.2"
+    androidTestCompile "com.google.dexmaker:dexmaker-mockito:1.2"
+    androidTestApt lib.daggerCompiler
+}
