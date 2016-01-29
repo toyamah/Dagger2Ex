@@ -4,6 +4,9 @@ Dagger2Ex
 社内勉強会で使うプロジェクト  
 Dagger2の基本的な使い方を説明している。
 
+### アジェンダ
+[アジェンダ](https://github.com/egugue/Dagger2Ex/wiki/%E3%82%A2%E3%82%B8%E3%82%A7%E3%83%B3%E3%83%80)
+
 ### Dagger2
 http://google.github.io/dagger/
 
